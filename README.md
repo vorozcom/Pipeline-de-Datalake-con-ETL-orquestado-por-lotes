@@ -1,6 +1,3 @@
-
-Lucas Osorno Ospina
-17:37
 # Pipeline de Datalake con ETL orquestado por lotes en AWS
 
 Este proyecto implementa un pipeline de datos automatizado (ETL) que simula la carga masiva y periódica de datos empresariales. Orquesta la ingesta, transformación, catalogación y notificación de datos utilizando servicios nativos de AWS.
@@ -16,7 +13,7 @@ El flujo de trabajo es orquestado totalmente por **AWS Step Functions** y sigue 
 5. **Calidad y Alertas:** Manejo de errores con **SNS** (envío de correos en caso de Éxito o Fallo).
 6. **Analítica:** Consultas SQL con **Athena** y visualización en **QuickSight**.
 
-![Diagrama de Arquitectura](./architecture/diagrama_arquitectura.jpg)
+![Diagrama de Arquitectura](architecture/diagrama_architecture.jpg)
 
 ## 🛠️ Servicios AWS utilizados
 
@@ -57,5 +54,3 @@ El flujo de trabajo es orquestado totalmente por **AWS Step Functions** y sigue 
 
 ---
 *Proyecto realizado como parte del curso de Administración de servidores y redes*
-nkx-phzx-zyo
-nkx-phzx-zyo
