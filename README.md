@@ -41,8 +41,8 @@ El flujo de trabajo es orquestado totalmente por **AWS Step Functions** y sigue 
 
 ## 📊 Resultados
 
-### Ejecución Exitosa (Step Functions)
-![Grafo SFN](./images/step_functions_graph.png)
+### Ejecución Orquestador (Step Functions)
+![Orquestador](images/stepfunctions_graph.png)
 
 ### Dashboard de Negocio (QuickSight)
 ![Dashboard](./images/dashboard_quicksight.png)
