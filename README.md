@@ -47,6 +47,18 @@ El flujo de trabajo es orquestado totalmente por **AWS Step Functions** y sigue 
 ### Dashboard de Negocio (QuickSight)
 ![Dashboard](./images/dashboard_quicksight.png)
 
+**##📍 Alcance del Proyecto y Suposiciones de Ingesta**
+
+Este proyecto se enfoca en el ciclo de vida del dato post-ingesta (Procesamiento, Orquestación y Consumo).
+
+Simulación de la Fuente de Datos: Se asume la existencia de un sistema transaccional externo (ej. un ERP de Ventas o un Servidor de Logs) que exporta sus datos periódicamente.
+
+Mecanismo Simulado: En un entorno productivo, un proceso automatizado (como un Cron Job o AWS Transfer Family) depositaría archivos CSV en el bucket S3 (/raw) diariamente a una hora específica.
+
+En esta Demo: Esta ingesta se simula mediante la carga manual de archivos CSV al bucket S3, lo cual representa el lote de datos ("Batch") del día a procesar.
+
+Disparador: El Pipeline detecta la presencia de estos datos o cumple su horario programado (EventBridge) para iniciar el ETL.
+
 ## 👥 Autores
 
 * Valeria Orozco Monsalve
