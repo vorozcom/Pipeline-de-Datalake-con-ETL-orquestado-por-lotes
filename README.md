@@ -45,7 +45,7 @@ El flujo de trabajo es orquestado totalmente por **AWS Step Functions** y sigue 
 ![Orquestador](images/stepfunctions_graph.png)
 
 ### Dashboard de Negocio (QuickSight)
-![Dashboard](./images/dashboard_quicksight.png)
+![Dashboard](images/dashboard.png)
 
 ## 📍 Alcance del Proyecto y Suposiciones de Ingesta
 
