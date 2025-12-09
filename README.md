@@ -16,7 +16,7 @@ El flujo de trabajo es orquestado totalmente por **AWS Step Functions** y sigue 
 5. **Calidad y Alertas:** Manejo de errores con **SNS** (envío de correos en caso de Éxito o Fallo).
 6. **Analítica:** Consultas SQL con **Athena** y visualización en **QuickSight**.
 
-![Diagrama de Arquitectura](./architecture/diagrama_arquitectura.png)
+![Diagrama de Arquitectura](./architecture/diagrama_arquitectura.jpg)
 
 ## 🛠️ Servicios AWS utilizados
 
