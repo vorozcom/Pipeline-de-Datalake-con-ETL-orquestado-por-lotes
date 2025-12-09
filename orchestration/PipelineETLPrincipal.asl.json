@@ -1,0 +1,54 @@
+{
+  "Comment": "Pipeline ETL orquestado: Glue Job -> Crawler -> Notificaciones",
+  "StartAt": "etl_python_shell",
+  "States": {
+    "etl_python_shell": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Arguments": {
+        "JobName": "etl_python_shell"
+      },
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.TaskFailed"
+          ],
+          "Next": "Notificar Fallo"
+        }
+      ],
+      "Next": "StartCrawler"
+    },
+    "StartCrawler": {
+      "Type": "Task",
+      "Arguments": {
+        "Name": "crawler-datos-procesados"
+      },
+      "Resource": "arn:aws:states:::aws-sdk:glue:startCrawler",
+      "Next": "Notificar Exito"
+    },
+    "Notificar Exito": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "Arguments": {
+        "TopicArn": "arn:aws:sns:us-east-1:530193443631:proyecto_exito",
+        "Message": "ÉXITO: El ETL terminó y los datos han sido catalogados en Athena."
+      },
+      "End": true
+    },
+    "Notificar Fallo": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "Arguments": {
+        "TopicArn": "arn:aws:sns:us-east-1:530193443631:proyecto_fallo",
+        "Message": "ALERTA CRÍTICA: El Glue Job ha fallado. Revisar logs."
+      },
+      "Next": "FailState"
+    },
+    "FailState": {
+      "Type": "Fail",
+      "Error": "GlueJobFailed",
+      "Cause": "El proceso ETL falló y se envió notificación."
+    }
+  },
+  "QueryLanguage": "JSONata"
+}
