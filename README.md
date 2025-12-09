@@ -47,7 +47,7 @@ El flujo de trabajo es orquestado totalmente por **AWS Step Functions** y sigue 
 ### Dashboard de Negocio (QuickSight)
 ![Dashboard](./images/dashboard_quicksight.png)
 
-# 📍 Alcance del Proyecto y Suposiciones de Ingesta
+## 📍 Alcance del Proyecto y Suposiciones de Ingesta
 
 Este proyecto se enfoca en el ciclo de vida del dato post-ingesta (Procesamiento, Orquestación y Consumo).
 
